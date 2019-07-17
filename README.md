@@ -1,4 +1,4 @@
-#Modern Portfolio
+# Modern Portfolio
 
 # Simple steps to setup workflow
 
@@ -17,12 +17,15 @@ Node
 4. Modify package.json file to run script for node-sass compiler
    4a. Replace script test with sass
    4b. Replace test script value with the following: "node-sass -w scss/ -o dist/css/ --recursive"
-   i. node-sass is the program we want to call
-   ii. -w stands for watch. In this case we want to watch the scss folder
-   iii. -o stands for output. In this case we want to output the compiled css into the dist/css folder
-   iv. --recursive prevents issues with any partial scss files and auto reloads
 5. Run the sass script using "npm run sass"
 6. Start coding sass
+
+About "node-sass -w scss/ -o dist/css/ --recursive" command
+
+1. node-sass is the program we want to call
+2. -w stands for watch. In this case we want to watch the scss folder
+3. -o stands for output. In this case we want to output the compiled css into the dist/css folder
+4. --recursive prevents issues with any partial scss files and auto reloads
 
 Git Repository Setup
 
