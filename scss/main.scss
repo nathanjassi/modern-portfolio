@@ -1,4 +1,5 @@
 @import 'config';
+@import 'menu';
 // Used to help code based on the box model
 // Removes unessesary margin and padding that is added by default
 * {
@@ -74,7 +75,7 @@ main {
 
       &:hover {
         color: $secondary-color;
-        @include easeOut();
+        @include easeOut;
       }
     }
   }
