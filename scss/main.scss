@@ -1,15 +1,17 @@
-$primary-color: #444;
-
+@import 'config';
+// Used to help code based on the box model
+// Removes unessesary margin and padding that is added by default
 * {
   box-sizing: border-box;
 }
 
 body {
+  @include background;
   background: $primary-color;
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -20,7 +22,60 @@ h3 {
   margin: 0;
   font-weight: 400;
 
+  // Mulitplier of the HTML (<html>) tag font size.
+  // Default font size is 16px. 1rem = 16px, 6rem = 16 * 6 = 96px
   &.lg-heading {
-    font-size: 6rem; // Mulitplier of the HTML (<html>) tag font size. Default font size is 16px. 1rem = 16px, 6rem = 16 * 6 = 96px.
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  &#home {
+    overflow: hidden;
+
+    h1 {
+      // vh stands for viewport height
+      // think of the height as 100 slices across
+      // if you take up 20vh you effectively take up 20% of the screens height
+      // if you take 50vh then it is half
+      // 100vh is the whole
+      margin-top: 20vh;
+    }
+  }
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
   }
 }
