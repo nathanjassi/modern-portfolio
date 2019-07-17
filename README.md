@@ -1,5 +1,3 @@
-# Modern Portfolio
-
 # Simple steps to setup workflow
 
 Folders
