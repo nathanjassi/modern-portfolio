@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: #292929;
     transition: all 1s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -40,14 +40,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: #070707;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 1s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #444;
+    background: #141414;
     transform: translate3d(0, 100%, 0);
     transition: all 1s ease-out; }
     .menu-branding.show {
@@ -72,7 +72,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: #fff;
+    color: #292929;
     text-decoration: none;
     transition: all 1s ease-out; }
     .menu .nav-link:hover {
@@ -90,29 +90,57 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+.color-btn {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 70px;
+  cursor: pointer;
+  transition: all 1s ease-out; }
+  .color-btn .btn-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #292929;
+    background: #d1495b;
+    background: radial-gradient(circle, #d1495b 0%, #facc6b 25%, #084c61 50%, #1b998b 75%, #00798c 100%);
+    transition: all 1s ease-out; }
+  .color-btn:hover:after {
+    content: 'Disable Color';
+    color: #949494;
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 13vw;
+    height: 2vh;
+    z-index: -1;
+    background: #292929;
+    border-radius: 25px;
+    line-height: 1.9; }
+
+.theme-btn {
+  position: absolute;
+  z-index: 3;
+  top: -5px;
+  right: 105px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 1s ease-out; }
+  .theme-btn:hover {
+    color: #474747; }
+
 * {
   box-sizing: border-box; }
 
 body {
-  background: #444;
-  color: #fff;
+  background: #141414;
+  color: #292929;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Arial black', Helvetica, sans-serif;
   line-height: 1.5; }
-  body#bg-img {
-    background: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: cover; }
-    body#bg-img:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: rgba(68, 68, 68, 0.9); }
 
 h1,
 h2,
@@ -122,22 +150,25 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 6rem;
+    letter-spacing: -0.5rem;
+    text-transform: uppercase; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    padding: 0.2rem 1rem; }
 
 a {
-  color: #fff;
+  color: #292929;
   text-decoration: none; }
 
 header {
   position: fixed;
   z-index: 2;
-  width: 100%; }
+  width: 100%;
+  background: #141414;
+  height: 8%; }
 
 .text-secondary {
   color: #eece1a; }
@@ -146,9 +177,28 @@ main {
   padding: 4rem;
   min-height: calc( 100vh - 60px); }
   main#home {
+    text-align: center;
     overflow: hidden; }
     main#home h1 {
-      margin-top: 20vh; }
+      margin-top: 10vh; }
+    main#home .colorize-text span {
+      transition: color 3s;
+      transition-delay: 1s; }
+      main#home .colorize-text span.color-1:hover {
+        transition: color 0s;
+        color: #d1495b; }
+      main#home .colorize-text span.color-2:hover {
+        transition: color 0s;
+        color: #facc6b; }
+      main#home .colorize-text span.color-3:hover {
+        transition: color 0s;
+        color: #084c61; }
+      main#home .colorize-text span.color-4:hover {
+        transition: color 0s;
+        color: #1b998b; }
+      main#home .colorize-text span.color-5:hover {
+        transition: color 0s;
+        color: #00798c; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -177,7 +227,7 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
-    background: #515151;
+    background: #212121;
     padding: 0.5rem;
     border-bottom: 5px solid #eece1a; }
 
@@ -208,9 +258,9 @@ main {
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
       background: #eece1a;
-      color: #000; }
+      color: #d4d4d4; }
       .boxes div:hover span {
-        color: #000; }
+        color: #d4d4d4; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -219,21 +269,21 @@ main {
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #eece1a;
-    color: #000; }
+    color: #d4d4d4; }
 
 .btn-dark {
   background: black;
   color: #fff; }
 
 .btn-light {
-  background: #c4c4c4;
+  background: #949494;
   color: #333; }
 
 #main-footer {
   text-align: center;
   padding: 1rem;
-  background: #2b2b2b;
-  color: #fff;
+  background: black;
+  color: #292929;
   height: 60px; }
 
 @media screen and (min-width: 1171px) {
