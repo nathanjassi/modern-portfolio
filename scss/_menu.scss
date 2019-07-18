@@ -134,3 +134,48 @@
     transition-delay: $x * 0.1s;
   }
 }
+
+// color menu button
+.color-btn {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 70px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid set-text-color($primary-color);
+    background: rgb(209, 73, 91);
+    background: radial-gradient(
+      circle,
+      rgba(209, 73, 91, 1) 0%,
+      rgba(250, 204, 107, 1) 25%,
+      rgba(8, 76, 97, 1) 50%,
+      rgba(27, 153, 139, 1) 75%,
+      rgba(0, 121, 140, 1) 100%
+    );
+    @include easeOut;
+  }
+
+  &:hover {
+    @include tooltip;
+  }
+}
+
+.theme-btn {
+  position: absolute;
+  z-index: 3;
+  top: -5px;
+  right: 105px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  @include easeOut;
+
+  &:hover {
+    color: lighten($primary-color, 20);
+  }
+}

@@ -1,6 +1,6 @@
-$primary-color: #444;
+$primary-color: #141414; // light = #fff, dark = #141414
 $secondary-color: #eece1a;
-$show-home-image: true;
+$show-home-image: false;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
 
@@ -29,12 +29,30 @@ $background-opacity: 0.9;
   }
 }
 
+@mixin tooltip {
+  &:after {
+    content: 'Disable Color';
+    color: lighten($primary-color, 50);
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 13vw;
+    height: 2vh;
+    z-index: -1;
+    background: set-text-color($primary-color);
+    border-radius: 25px;
+    line-height: 1.9;
+  }
+}
+
 // set text color
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
-    @return #000;
+    @return #d4d4d4;
   } @else {
-    @return #fff;
+    @return #292929;
   }
 }
 
