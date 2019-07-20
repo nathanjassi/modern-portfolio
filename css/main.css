@@ -12,6 +12,18 @@
     opacity: 1;
     transform: translateY(0px) scale(1); } }
 
+@keyframes shake {
+  0% {
+    transform: rotate(0deg); }
+  80% {
+    transform: rotate(0deg); }
+  85% {
+    transform: rotate(15deg); }
+  95% {
+    transform: rotate(-15deg); }
+  100% {
+    transform: rotate(0deg); } }
+
 header {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -40,6 +52,10 @@ header {
             color: #cccccc; }
         header .menu .menu-nav .nav-item .light-btn {
           cursor: pointer; }
+          header .menu .menu-nav .nav-item .light-btn .fa-lightbulb {
+            animation: shake 2.5s infinite; }
+            header .menu .menu-nav .nav-item .light-btn .fa-lightbulb:hover {
+              animation: none; }
 
 * {
   box-sizing: border-box; }
@@ -107,7 +123,11 @@ main {
     justify-content: center;
     text-align: center; }
     main #home .work-section {
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 1rem;
+      font-style: italic;
+      font-weight: 400; }
       main #home .work-section .fa-angle-double-down {
         display: block;
         animation-name: bounce;
@@ -144,17 +164,34 @@ main {
     padding: 0.5rem;
     border-bottom: 5px solid #ff006ae3; }
 
-#projects {
+#projects .lg-heading,
+#projects2 .lg-heading {
+  text-align: center;
+  margin-bottom: 1rem; }
+
+#projects .items,
+#projects2 .items {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
-  #projects img {
-    width: 100%;
-    border: 3px solid #fff; }
-    #projects img:hover {
-      opacity: 0.5;
-      border-color: #ff006ae3;
-      transition: all 1s ease-out; }
+  grid-template-columns: repeat(12, 1fr);
+  background: lightblue; }
+  #projects .items .item,
+  #projects2 .items .item {
+    grid-column: span 4; }
+  #projects .items .big-one,
+  #projects2 .items .big-one {
+    background: green;
+    grid-row: span 2; }
+
+#projects img,
+#projects2 img {
+  width: 100%;
+  border: 3px solid #fff; }
+  #projects img:hover,
+  #projects2 img:hover {
+    opacity: 0.5;
+    border-color: #ff006ae3;
+    transition: all 1s ease-out; }
 
 .boxes {
   display: flex;
@@ -238,9 +275,7 @@ main {
 
 @media screen and (min-width: 1171px) {
   body .mobile-md {
-    display: none; }
-  #projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    display: none; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   body .mobile-lg {
@@ -253,7 +288,7 @@ main {
   main .lg-heading.colorizer-text {
     font-size: 4rem;
     letter-spacing: 0; }
-  #projects {
+  #projects .items {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
@@ -275,9 +310,9 @@ main {
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
-  #projects {
+  #projects .item {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  #projects {
+  #projects .items {
     grid-template-columns: 1fr; } }

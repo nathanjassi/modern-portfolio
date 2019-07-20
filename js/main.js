@@ -8,10 +8,10 @@ const navItems = document.querySelectorAll('.nav-item');
 const colorizerText = document.querySelectorAll('.colorizer-text');
 
 const lockTextColor = document.querySelector('.fa-lightbulb');
-// Set initial state of text color
+// set initial state of text color
 let colorText = false;
 
-// Set the initial state of menu
+// set the initial state of menu
 let showMenu = false;
 
 lockTextColor.addEventListener('click', toggleTextColor);
