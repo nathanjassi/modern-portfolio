@@ -12,7 +12,7 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: 'Arial black', Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.5;
 }
 
@@ -21,17 +21,18 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400;
+  font-weight: 700;
 
   // Mulitplier of the HTML (<html>) tag font size.
   // Default font size is 16px. 1rem = 16px, 6rem = 16 * 6 = 96px
   &.lg-heading {
-    font-size: 6rem;
-    letter-spacing: -0.5rem;
+    font-size: 5rem;
     text-transform: uppercase;
+    line-height: 1;
   }
 
   &.sm-heading {
+    font-size: 2rem;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
   }
@@ -43,11 +44,7 @@ a {
 }
 
 header {
-  position: fixed;
-  z-index: 2;
   width: 100%;
-  background: $primary-color;
-  height: 8%;
 }
 
 .text-secondary {
@@ -55,55 +52,58 @@ header {
 }
 
 main {
-  &#home {
+  overflow: hidden;
+  section {
+    width: 100%;
+  }
+  #home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    overflow: hidden;
-
     h1 {
       // vh stands for viewport height
       // think of the height as 100 slices across
       // if you take up 20vh you effectively take up 20% of the screens height
       // if you take 50vh then it is half
       // 100vh is the whole
-      margin-top: 10vh;
+      //margin-top: 10vh;
     }
 
-    .colorize-text {
-      span {
-        transition: color 3s;
-        transition-delay: 1s;
-
-        &.color-1:hover {
-          transition: color 0s;
-          color: #d1495b;
-        }
-        &.color-2:hover {
-          transition: color 0s;
-          color: #facc6b;
-        }
-        &.color-3:hover {
-          transition: color 0s;
-          color: #084c61;
-        }
-        &.color-4:hover {
-          transition: color 0s;
-          color: #1b998b;
-        }
-        &.color-5:hover {
-          transition: color 0s;
-          color: #00798c;
-        }
+    .work-section {
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 1rem;
+      font-style: italic;
+      font-weight: 400;
+      .fa-angle-double-down {
+        display: block;
+        animation-name: bounce;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
   }
-  padding: 4rem;
+  #contact {
+    height: 100vh;
+    padding-top: 5rem;
+    h2 {
+      text-align: center;
+    }
+  }
+  padding: 1rem;
   //height: 100%;
-  min-height: calc(
-    100vh - 60px
-  ); // sticky footer rule. 100vh is the whole height of the screen. we then take away the height of the footer.
+
+  // sticky footer rule.
+  //100vh is the whole height of the screen.
+  //we then take away the height of the footer.
+  min-height: calc(100vh - 60px);
 
   .icons {
-    margin-top: 1rem;
+    //margin-top: 1rem;
 
     a {
       padding: 0.4rem;
@@ -154,15 +154,56 @@ main {
 }
 
 // work/projects page
-.projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-
+#projects {
+  .lg-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .items {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(12, 1fr);
+    .item {
+      grid-column: span 4;
+      width: 100%;
+      max-height: 350px;
+      &.item-1 {
+        grid-column: span 3;
+      }
+      &.item-2 {
+        grid-column: span 6;
+      }
+      &.item-3 {
+        grid-column: span 3;
+      }
+      &.item-4 {
+        grid-column: span 4;
+      }
+      &.item-5 {
+        grid-column: span 3;
+      }
+      &.item-6 {
+        grid-column: span 5;
+      }
+      &.item-7 {
+        grid-column: span 8;
+      }
+      &.item-8 {
+        grid-column: span 4;
+      }
+    }
+  }
+  .fa-eye {
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+  }
   img {
     width: 100%;
     border: 3px solid #fff;
-
+    max-height: 350px;
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
@@ -173,17 +214,16 @@ main {
 
 // contact page
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
+  display: grid;
+  margin-top: 30vh;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 0.7rem;
+  text-align: center;
 
   div {
     font-size: 2rem;
     border: 3px solid #fff;
     padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
     @include easeOut;
 
     &:hover {
@@ -197,36 +237,44 @@ main {
   }
 }
 
-// button styles
-.btn {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-
-  &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
-  }
-}
-.btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 50);
-  color: #fff;
-}
-
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
-}
-
+// footer
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
   height: 60px;
+}
+
+// colorizer styles
+.colorizer-text,
+.colorizer-icons {
+  span,
+  a {
+    transition: color 3s;
+    transition-delay: 1s;
+
+    &.color-1:hover {
+      transition: color 0s;
+      color: $colorize-pallet-1;
+    }
+    &.color-2:hover {
+      transition: color 0s;
+      color: $colorize-pallet-2;
+    }
+    &.color-3:hover {
+      transition: color 0s;
+      color: $colorize-pallet-3;
+    }
+    &.color-4:hover {
+      transition: color 0s;
+      color: $colorize-pallet-4;
+    }
+    &.color-5:hover {
+      transition: color 0s;
+      color: $colorize-pallet-5;
+    }
+  }
 }
 
 @import 'mobile';

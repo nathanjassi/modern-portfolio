@@ -5,60 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400i,700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://kit.fontawesome.com/c27ee5fe11.js"></script>
     <title>Welcome To My Portfolio</title>
   </head>
   <body id="bg-img">
     <header>
-      <div class="theme-btn">
-        <h6>Light Mode</h6>
-      </div>
-      <div class="menu-btn">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
+      <div class="logo">
+        Nathan
+        <span class="text-secondary">J.</span>
       </div>
 
       <nav class="menu">
-        <div class="menu-branding">
-          <div class="portrait"></div>
-        </div>
         <ul class="menu-nav">
-          <li class="nav-item current">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
           <li class="nav-item">
             <a href="about.html" class="nav-link">About Me</a>
           </li>
-          <li class="nav-item">
-            <a href="work.html" class="nav-link">My Work</a>
+          <li class="nav-item mobile-lg">
+            <a href="#!" class="nav-link theme-btn">Light Theme</a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">How To Reach Me</a>
+            <div class="light-btn">
+              <i class="far fa-lightbulb"></i>
+            </div>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main id="home">
-      <h1 class="lg-heading colorize-text">
-        Hello World! I'm Nathan, a front end web developer specialised in
-        frontend technologies.
-      </h1>
-      <div class="icons">
-        <a href="#!">
-          <i class="fab fa-twitter fa-2x"></i>
+    <main>
+      <section id="home">
+        <h1 class="lg-heading colorizer-text">
+          Hello World! I'm Nathan, a front end web developer specialised in
+          frontend technologies.
+        </h1>
+        <div class="icons colorizer-icons">
+          <a href="#!" class="color-1">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="#!" class="color-2">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="#!" class="color-3">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="#!" class="color-4">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+        <a href="#!" class="work-section">
+          Explore more
+          <i class="fas fa-angle-double-down"></i>
         </a>
-        <a href="#!">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="#!">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-      </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="lg-heading colorizer-text">Projects</h2>
+        <div class="items">
+          <div class="item item-1">
+            <a href="#!">
+              <img src="img/projects/rollerbanners.png" alt="Rollerbanners" />
+            </a>
+          </div>
+          <div class="item item-2">
+            <a href="#!">
+              <img src="img/projects/the_cake_store.png" alt="The Cake Store" />
+            </a>
+          </div>
+          <div class="item item-3">
+            <a href="#!">
+              <img src="img/projects/weeprint.png" alt="Weeprint" />
+            </a>
+          </div>
+          <div class="item item-4">
+            <a href="#!">
+              <img src="img/projects/olive_clothing.png" alt="Olive Clothing" />
+            </a>
+          </div>
+          <div class="item item-5">
+            <a href="#!">
+              <img src="img/projects/marie_chantal.png" alt="Marie Chantal" />
+            </a>
+          </div>
+          <div class="item item-6">
+            <a href="#!">
+              <img src="img/projects/eclisse.png" alt="Eclisse" />
+            </a>
+          </div>
+          <div class="item item-7">
+            <a href="#!">
+              <img src="img/projects/tj_collection.png" alt="TJ Collection" />
+            </a>
+          </div>
+          <div class="item item-8">
+            <a href="#!">
+              <img
+                src="img/projects/brilliant_bakers.png"
+                alt="The Brilliant Bakers"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2 class="lg-heading colorizer-text">How to get in touch</h2>
+        <div class="contact-info boxes">
+          <div class="email">
+            Email:
+            <br />
+            nathan.jassi@icloud.com
+          </div>
+          <div class="phone">
+            Phone:
+            <br />
+            07510315002
+          </div>
+          <div class="location">
+            Location:
+            <br />
+            Leicester
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="js/main.js"></script>

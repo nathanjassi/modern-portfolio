@@ -1,7 +1,17 @@
-$primary-color: #141414; // light = #fff, dark = #141414
-$secondary-color: #eece1a;
-$show-home-image: false;
-$home-image: url(../img/background.jpg);
+$primary-color: #000; // light = #fff, dark = #141414
+$secondary-color: #00798c;
+
+// colorize
+$colorize-pallet-1: #d1495b; //#d1495b;
+$colorize-pallet-2: #facc6b; //#facc6b;
+$colorize-pallet-3: #084c61; //#084c61;
+$colorize-pallet-4: #1b998b; //#1b998b;
+$colorize-pallet-5: #00798c; //#00798c;
+
+// background image
+$show-home-image: true;
+$home-image: url(../img/background_test.jpg);
+$background-position: fixed;
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -17,7 +27,7 @@ $background-opacity: 0.9;
 
       &:after {
         content: '';
-        position: absolute;
+        position: $background-position;
         top: 0;
         right: 0;
         width: 100%;
@@ -34,7 +44,45 @@ $background-opacity: 0.9;
   @if (lightness($color) > 40) {
     @return #d4d4d4;
   } @else {
-    @return #292929;
+    @return #44404a;
+  }
+}
+
+// Animate
+@keyframes bounce {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(15deg);
+  }
+  95% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
