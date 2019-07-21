@@ -1,5 +1,5 @@
-$primary-color: #000; // light = #fff, dark = #141414
-$secondary-color: #3498db;
+$primary-color: #141414; // light = #fff, dark = #141414
+$secondary-color: #d82525;
 
 // colorize
 $colorize-pallet-1: #d1495b; //#d1495b;
@@ -44,7 +44,7 @@ $background-opacity: 0.9;
   @if (lightness($color) > 40) {
     @return #d4d4d4;
   } @else {
-    @return #44404a;
+    @return #585858;
   }
 }
 
