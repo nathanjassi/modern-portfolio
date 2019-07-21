@@ -167,6 +167,7 @@ main {
       grid-column: span 4;
       width: 100%;
       max-height: 350px;
+      position: relative;
       &.item-1 {
         grid-column: span 3;
       }
@@ -191,14 +192,28 @@ main {
       &.item-8 {
         grid-column: span 4;
       }
+      p {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 35%;
+        left: 0%;
+        font-size: 30px;
+        opacity: 0;
+        transition: all 1s ease-out;
+        color: #fff;
+        text-align: center;
+        @include easeOut;
+      }
+      &:hover p {
+        opacity: 1;
+      }
+      &:hover img {
+        opacity: 0.5;
+        border-color: $secondary-color;
+        @include easeOut;
+      }
     }
-  }
-  .fa-eye {
-    position: absolute;
-    visibility: hidden;
-    top: 50%;
-    left: 50%;
-    color: #fff;
   }
   img {
     width: 100%;
@@ -206,11 +221,6 @@ main {
     height: 350px;
     object-fit: cover;
     object-position: 50% 0%;
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
-    }
   }
 }
 

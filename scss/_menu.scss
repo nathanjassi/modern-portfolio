@@ -44,6 +44,9 @@ header {
             &:hover {
               animation: none;
             }
+            &.fas {
+              color: set-text-color($secondary-color);
+            }
           }
         }
       }
