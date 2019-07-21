@@ -18,9 +18,9 @@
   80% {
     transform: rotate(0deg); }
   85% {
-    transform: rotate(15deg); }
+    transform: rotate(25deg); }
   95% {
-    transform: rotate(-15deg); }
+    transform: rotate(-25deg); }
   100% {
     transform: rotate(0deg); } }
 
@@ -182,7 +182,8 @@ main {
   #projects .items .item {
     grid-column: span 4;
     width: 100%;
-    max-height: 350px; }
+    max-height: 350px;
+    position: relative; }
     #projects .items .item.item-1 {
       grid-column: span 3; }
     #projects .items .item.item-2 {
@@ -199,13 +200,24 @@ main {
       grid-column: span 8; }
     #projects .items .item.item-8 {
       grid-column: span 4; }
-
-#projects .fa-eye {
-  position: absolute;
-  visibility: hidden;
-  top: 50%;
-  left: 50%;
-  color: #fff; }
+    #projects .items .item p {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 35%;
+      left: 0%;
+      font-size: 30px;
+      opacity: 0;
+      transition: all 1s ease-out;
+      color: #fff;
+      text-align: center;
+      transition: all 1s ease-out; }
+    #projects .items .item:hover p {
+      opacity: 1; }
+    #projects .items .item:hover img {
+      opacity: 0.5;
+      border-color: #3498db;
+      transition: all 1s ease-out; }
 
 #projects img {
   width: 100%;
@@ -213,10 +225,6 @@ main {
   height: 350px;
   object-fit: cover;
   object-position: 50% 0%; }
-  #projects img:hover {
-    opacity: 0.5;
-    border-color: #3498db;
-    transition: all 1s ease-out; }
 
 .boxes {
   display: grid;
