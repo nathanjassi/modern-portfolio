@@ -58,22 +58,13 @@ main {
     width: 100%;
   }
   #home {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    h1 {
-      // vh stands for viewport height
-      // think of the height as 100 slices across
-      // if you take up 20vh you effectively take up 20% of the screens height
-      // if you take 50vh then it is half
-      // 100vh is the whole
-      //margin-top: 10vh;
-    }
-
     .work-section {
+      display: none;
       font-size: 1rem;
       position: absolute;
       bottom: 1rem;
@@ -87,7 +78,6 @@ main {
     }
   }
   #contact {
-    height: 100vh;
     padding-top: 5rem;
     h2 {
       text-align: center;

@@ -10,6 +10,7 @@ $colorize-pallet-5: #00798c; //#00798c;
 
 // background image
 $show-home-image: true;
+$show-about-image: true;
 $home-image: url(../img/background_test.jpg);
 $about-image: url(../img/about_background.jpeg);
 $background-position: fixed;
@@ -21,8 +22,7 @@ $background-opacity: 0.9;
 
 @mixin background {
   @if $show-home-image {
-    &#bg-img,
-    &#about-bg-img {
+    &#bg-img {
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
@@ -38,10 +38,23 @@ $background-opacity: 0.9;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+  @if $show-about-image {
     &#about-bg-img {
       background: $about-image;
       background-attachment: fixed;
       background-size: cover;
+
+      &:after {
+        content: '';
+        position: $background-position;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, $background-opacity);
+      }
     }
   }
 }
