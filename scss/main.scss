@@ -116,39 +116,46 @@ main {
 }
 
 //about page
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    'bioimage bio bio'
-    'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
+#about {
+  text-align: left;
+  .headings {
+    text-align: center;
+  }
+  .about-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
 
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: 3px solid $secondary-color;
-  }
-  .bio {
-    grid-area: bio;
-    font-size: 1.5rem;
-  }
+    .info-box {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr;
+      padding: 1rem 0;
+      border-bottom: 1px solid set-text-color($primary-color);
+      &:last-child {
+        border-bottom: none;
+      }
 
-  .job-1 {
-    grid-area: job1;
-  }
-  .job-2 {
-    grid-area: job2;
-  }
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: 5px solid $secondary-color;
+      h2 {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+        }
+      }
+    }
+    .color-1 {
+      color: $colorize-pallet-1;
+    }
+    .color-2 {
+      color: $colorize-pallet-2;
+    }
+    .color-3 {
+      color: $colorize-pallet-4;
+    }
   }
 }
 

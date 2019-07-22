@@ -35,6 +35,20 @@
       }
     }
   }
+  #about {
+    .about-info {
+      max-width: 60vw;
+
+      .info-box {
+        grid-template-areas: 'heading text';
+        grid-template-columns: 200px 1fr;
+
+        h2 {
+          grid-area: heading;
+        }
+      }
+    }
+  }
 }
 // desktops & laptops
 @include mediaLg {
@@ -109,6 +123,20 @@
       }
     }
   }
+  #about {
+    .about-info {
+      max-width: 60vw;
+
+      .info-box {
+        grid-template-areas: 'heading text';
+        grid-template-columns: 200px 1fr;
+
+        h2 {
+          grid-area: heading;
+        }
+      }
+    }
+  }
   .boxes {
     grid-template-columns: repeat(2, 1fr);
 
@@ -154,17 +182,6 @@
       justify-content: start;
       padding-top: 15vh;
     }
-  }
-
-  .about-info {
-    grid-template-areas:
-      'bioimage'
-      'bio'
-      'job1'
-      'job2'
-      'job3';
-
-    grid-template-columns: 1fr;
   }
 
   #projects {
