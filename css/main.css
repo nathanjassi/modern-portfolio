@@ -132,13 +132,13 @@ main {
   main section {
     width: 100%; }
   main #home {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center; }
     main #home .work-section {
+      display: none;
       font-size: 1rem;
       position: absolute;
       bottom: 1rem; }
@@ -149,7 +149,6 @@ main {
         animation-iteration-count: infinite;
         animation-timing-function: linear; }
   main #contact {
-    height: 100vh;
     padding-top: 5rem; }
     main #contact h2 {
       text-align: center; }
@@ -292,6 +291,10 @@ main {
 @media screen and (min-width: 1171px) {
   body .mobile-md {
     display: none; }
+  main #home {
+    height: 100vh; }
+    main #home .work-section {
+      display: block; }
   #projects .items .item p {
     position: absolute;
     width: 100%;
@@ -328,6 +331,10 @@ main {
   main .lg-heading.colorizer-text {
     font-size: 4rem;
     letter-spacing: 0; }
+  main #home {
+    height: 100vh; }
+    main #home .work-section {
+      display: block; }
   #projects .items .item.item-1 {
     grid-column: span 6; }
   #projects .items .item.item-2 {
@@ -390,11 +397,11 @@ main {
       line-height: 1;
       margin-bottom: 1rem; }
       main .lg-heading.colorizer-text {
-        font-size: 4rem;
+        font-size: 2.3rem;
         letter-spacing: 0; }
     main #home {
-      justify-content: start;
-      padding-top: 15vh; }
+      padding: 5vh;
+      height: 100vh; }
   #projects .items .item.item-1 {
     grid-column: span 6; }
   #projects .items .item.item-2 {
@@ -415,12 +422,12 @@ main {
     font-size: 1.5rem;
     margin: 0; }
   .boxes {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 8vh; }
+    .boxes .box a {
+      font-size: 1.5rem; } }
 
 @media screen and (max-width: 500px) {
-  main .lg-heading.colorizer-text {
-    font-size: 3rem;
-    letter-spacing: 0; }
   #projects .items .item.item-1 {
     grid-column: span 12; }
   #projects .items .item.item-2 {
