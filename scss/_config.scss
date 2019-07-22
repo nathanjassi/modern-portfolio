@@ -1,4 +1,4 @@
-$primary-color: #141414; // light = #fff, dark = #141414
+$primary-color: #121212; // light = #fff, dark = #141414
 $secondary-color: #d82525;
 
 // colorize
@@ -9,8 +9,8 @@ $colorize-pallet-4: #1b998b; //#1b998b;
 $colorize-pallet-5: #00798c; //#00798c;
 
 // background image
-$show-home-image: true;
-$show-about-image: true;
+$show-home-image: false;
+$show-about-image: false;
 $home-image: url(../img/background_test.jpg);
 $about-image: url(../img/about_background.jpeg);
 $background-position: fixed;
@@ -64,7 +64,7 @@ $background-opacity: 0.9;
   @if (lightness($color) > 40) {
     @return #d4d4d4;
   } @else {
-    @return #585858;
+    @return #fff;
   }
 }
 
