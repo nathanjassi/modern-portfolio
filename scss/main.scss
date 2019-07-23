@@ -161,7 +161,7 @@ main {
   }
   .items {
     display: grid;
-    grid-gap: 0.7rem;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(12, 1fr);
     .item {
       grid-column: span 4;
@@ -196,7 +196,6 @@ main {
   }
   img {
     width: 100%;
-    border: 3px solid #fff;
     max-height: 135px;
     object-fit: cover;
     object-position: 50% 0%;
@@ -208,7 +207,7 @@ main {
   display: grid;
   margin-top: 8vh;
   grid-template-columns: repeat(3, 3fr);
-  grid-gap: 0.7rem;
+  grid-gap: 1.5rem;
   text-align: center;
 
   .box a {
@@ -244,7 +243,6 @@ main {
   span,
   a {
     transition: color 3s;
-    transition-delay: 1s;
 
     &.color-1:hover {
       transition: color 0s;
@@ -268,5 +266,6 @@ main {
     }
   }
 }
-
+@import 'dark';
+@import 'light';
 @import 'mobile';

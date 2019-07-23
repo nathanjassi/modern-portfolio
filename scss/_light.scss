@@ -1,0 +1,34 @@
+body {
+  &.light-theme {
+    @include easeOut;
+    @include background;
+    background: lighten($light-primary-color, 80);
+    color: $light-primary-color;
+    a,
+    span {
+      color: $light-primary-color;
+    }
+    #projects {
+      .items {
+        .item {
+          background: darken($light-primary-color, 50);
+        }
+      }
+    }
+    .boxes {
+      .box a {
+        border: 3px solid $light-primary-color;
+      }
+    }
+    #main-footer {
+      background: darken($light-primary-color, 10);
+    }
+    #about {
+      .about-info {
+        .info-box {
+          border-bottom: 1px solid $light-primary-color;
+        }
+      }
+    }
+  }
+}

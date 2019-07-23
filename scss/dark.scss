@@ -1,0 +1,5 @@
+body {
+  &.dark-theme {
+    @include easeOut;
+  }
+}

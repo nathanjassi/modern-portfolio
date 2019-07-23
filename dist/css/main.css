@@ -171,7 +171,7 @@ main {
 
 #projects .items {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 1.5rem;
   grid-template-columns: repeat(12, 1fr); }
   #projects .items .item {
     grid-column: span 4;
@@ -197,7 +197,6 @@ main {
 
 #projects img {
   width: 100%;
-  border: 3px solid #fff;
   max-height: 135px;
   object-fit: cover;
   object-position: 50% 0%; }
@@ -206,7 +205,7 @@ main {
   display: grid;
   margin-top: 8vh;
   grid-template-columns: repeat(3, 3fr);
-  grid-gap: 0.7rem;
+  grid-gap: 1.5rem;
   text-align: center; }
   .boxes .box a {
     display: block;
@@ -232,8 +231,7 @@ main {
 .colorizer-text a,
 .colorizer-icons span,
 .colorizer-icons a {
-  transition: color 3s;
-  transition-delay: 1s; }
+  transition: color 3s; }
   .colorizer-text span.color-1:hover,
   .colorizer-text a.color-1:hover,
   .colorizer-icons span.color-1:hover,
@@ -264,6 +262,25 @@ main {
   .colorizer-icons a.color-5:hover {
     transition: color 0s;
     color: #00798c; }
+
+body.dark-theme {
+  transition: all 1s ease-out; }
+
+body.light-theme {
+  transition: all 1s ease-out;
+  background: white;
+  color: #d4d4d4; }
+  body.light-theme a,
+  body.light-theme span {
+    color: #d4d4d4; }
+  body.light-theme #projects .items .item {
+    background: #555555; }
+  body.light-theme .boxes .box a {
+    border: 3px solid #d4d4d4; }
+  body.light-theme #main-footer {
+    background: #bbbbbb; }
+  body.light-theme #about .about-info .info-box {
+    border-bottom: 1px solid #d4d4d4; }
 
 @media screen and (min-width: 1171px) {
   body .mobile-md {
