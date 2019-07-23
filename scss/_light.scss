@@ -8,6 +8,9 @@ body {
     span {
       color: $light-primary-color;
     }
+    .text-secondary {
+      color: $secondary-color;
+    }
     #projects {
       .items {
         .item {

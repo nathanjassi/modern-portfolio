@@ -273,6 +273,8 @@ body.light-theme {
   body.light-theme a,
   body.light-theme span {
     color: #d4d4d4; }
+  body.light-theme .text-secondary {
+    color: #d82525; }
   body.light-theme #projects .items .item {
     background: #555555; }
   body.light-theme .boxes .box a {
