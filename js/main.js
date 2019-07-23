@@ -6,7 +6,7 @@ const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
 const colorizerText = document.querySelectorAll('.colorizer-text');
-
+const themeButton = document.querySelector('.theme-btn');
 const lockTextColor = document.querySelector('.fa-lightbulb');
 // set initial state of text color
 let colorText = false;
@@ -15,8 +15,10 @@ let colorText = false;
 let showMenu = false;
 
 lockTextColor.addEventListener('click', toggleTextColor);
-// menuBtn.addEventListener('click', toggleMenu);
+themeButton.addEventListener('click', toggleTheme);
+
 setTextColor(colorizerText);
+checkThemeState();
 
 function toggleTextColor() {
   const colorizerColor1 = document.querySelectorAll('.color-1');
@@ -64,28 +66,6 @@ function toggleTextColor() {
   }
 }
 
-// function toggleMenu() {
-//   if (!showMenu) {
-//     menuBtn.classList.add('close');
-//     menu.classList.add('show');
-//     menuNav.classList.add('show');
-//     menuBranding.classList.add('show');
-//     navItems.forEach((item) => item.classList.add('show'));
-
-//     // Set menu state
-//     showMenu = true;
-//   } else {
-//     menuBtn.classList.remove('close');
-//     menu.classList.remove('show');
-//     menuNav.classList.remove('show');
-//     menuBranding.classList.remove('show');
-//     navItems.forEach((item) => item.classList.remove('show'));
-
-//     // Set menu state
-//     showMenu = false;
-//   }
-// }
-
 // set the color of each letter
 // sets upto 5 colors
 function setTextColor(text) {
@@ -100,5 +80,36 @@ function setTextColor(text) {
       colorNumber = colorNumber + 1 < 5 ? colorNumber + 1 : 0;
       span.classList.add(`color-${colorNumber + 1}`);
     }
+  }
+}
+
+// toggle theme
+function toggleTheme() {
+  const body = document.getElementsByTagName('body');
+  let light = localStorage.getItem('light');
+  if (light === 'false') {
+    body[0].classList.add('light-theme');
+    body[0].classList.remove('dark-theme');
+    themeButton.innerHTML = 'Dark Theme';
+    localStorage.setItem('light', 'true');
+  } else {
+    body[0].classList.remove('light-theme');
+    body[0].classList.add('dark-theme');
+    themeButton.innerHTML = 'Light Theme';
+    localStorage.setItem('light', 'false');
+  }
+}
+
+function checkThemeState() {
+  const body = document.getElementsByTagName('body');
+  let light = localStorage.getItem('light');
+  if (light === 'false') {
+    body[0].classList.remove('light-theme');
+    body[0].classList.add('dark-theme');
+    themeButton.innerHTML = 'Light Theme';
+  } else {
+    body[0].classList.add('light-theme');
+    body[0].classList.remove('dark-theme');
+    themeButton.innerHTML = 'Dark Theme';
   }
 }
