@@ -150,6 +150,14 @@
         }
       }
     }
+    .far.fa-file-alt {
+      &:hover {
+        & + .tool-tip {
+          @include easeOut;
+          display: block;
+        }
+      }
+    }
   }
   .boxes {
     grid-template-columns: repeat(2, 1fr);

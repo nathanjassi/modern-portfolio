@@ -114,6 +114,21 @@ main {
   text-align: left;
   .headings {
     text-align: center;
+    .download-cv {
+      position: relative;
+    }
+    .far.fa-file-alt {
+      &:hover {
+        color: $colorize-pallet-2;
+      }
+    }
+    .tool-tip {
+      display: none;
+      font-size: 11px;
+      position: absolute;
+      right: -90px;
+      top: 61px;
+    }
   }
   .about-info {
     display: grid;
