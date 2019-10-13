@@ -120,6 +120,17 @@ main {
     grid-template-columns: 1fr;
     margin: 0 auto;
 
+    .experience {
+      div {
+        border-bottom: 1px solid set-text-color($primary-color);
+        margin-bottom: 1em;
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .info-box {
       display: grid;
       grid-gap: 1rem;

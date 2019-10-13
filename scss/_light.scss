@@ -28,8 +28,19 @@ body {
     }
     #about {
       .about-info {
+        .experience {
+          div {
+            border-bottom: 1px solid $light-primary-color;
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
         .info-box {
           border-bottom: 1px solid $light-primary-color;
+          &:last-child {
+            border-bottom: none;
+          }
         }
       }
     }
