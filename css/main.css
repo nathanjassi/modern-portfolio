@@ -339,7 +339,10 @@ body.light-theme {
       grid-template-areas: 'heading text';
       grid-template-columns: 200px 1fr; }
       #about .about-info .info-box h2 {
-        grid-area: heading; } }
+        grid-area: heading; }
+  #about .far.fa-file-alt:hover + .tool-tip {
+    transition: all 1s ease-out;
+    display: block; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   body .mobile-lg {
