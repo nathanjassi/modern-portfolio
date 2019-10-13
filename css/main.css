@@ -139,6 +139,16 @@ main {
   text-align: left; }
   #about .headings {
     text-align: center; }
+    #about .headings .download-cv {
+      position: relative; }
+    #about .headings .far.fa-file-alt:hover {
+      color: #facc6b; }
+    #about .headings .tool-tip {
+      display: none;
+      font-size: 11px;
+      position: absolute;
+      right: -90px;
+      top: 61px; }
   #about .about-info {
     display: grid;
     grid-template-columns: 1fr;
@@ -386,6 +396,9 @@ body.light-theme {
       grid-template-columns: 200px 1fr; }
       #about .about-info .info-box h2 {
         grid-area: heading; }
+  #about .far.fa-file-alt:hover + .tool-tip {
+    transition: all 1s ease-out;
+    display: block; }
   .boxes {
     grid-template-columns: repeat(2, 1fr); }
     .boxes .location {
