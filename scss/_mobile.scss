@@ -56,6 +56,14 @@
         }
       }
     }
+    .far.fa-file-alt {
+      &:hover {
+        & + .tool-tip {
+          @include easeOut;
+          display: block;
+        }
+      }
+    }
   }
 }
 // desktops & laptops
