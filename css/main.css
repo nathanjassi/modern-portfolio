@@ -143,6 +143,12 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 auto; }
+    #about .about-info .experience div {
+      border-bottom: 1px solid #fff;
+      margin-bottom: 1em; }
+      #about .about-info .experience div:last-child {
+        border-bottom: none;
+        margin-bottom: 0; }
     #about .about-info .info-box {
       display: grid;
       grid-gap: 1rem;
@@ -281,8 +287,14 @@ body.light-theme {
     border: 3px solid #d4d4d4; }
   body.light-theme #main-footer {
     background: #bbbbbb; }
+  body.light-theme #about .about-info .experience div {
+    border-bottom: 1px solid #d4d4d4; }
+    body.light-theme #about .about-info .experience div:last-child {
+      border-bottom: none; }
   body.light-theme #about .about-info .info-box {
     border-bottom: 1px solid #d4d4d4; }
+    body.light-theme #about .about-info .info-box:last-child {
+      border-bottom: none; }
 
 @media screen and (min-width: 1171px) {
   body .mobile-md {
